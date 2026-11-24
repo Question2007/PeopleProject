@@ -37,6 +37,15 @@ namespace PeopleProject.Tests
         }
 
         [Test]
+        public void AtlagEletkorHarmad()
+        {
+            people.UjSzemely(12);
+            people.UjSzemely(13);
+            people.UjSzemely(12);
+            Assert.That(people.AtlagEletkor(10, 20), Is.EqualTo(12.3333).Within(0.01));
+        }
+
+        [Test]
         public void AtlagEletkorInterval()
         {
             people.UjSzemely(20);
